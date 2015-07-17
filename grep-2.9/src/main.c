@@ -49,7 +49,7 @@
 #include "xalloc.h"
 #include "xstrtol.h"
 
-#define SEP_CHAR_SELECTED ':'
+#define SEP_CHAR_SELECTED '+'
 #define SEP_CHAR_REJECTED '-'
 #define SEP_STR_GROUP    "--"
 
@@ -732,7 +732,7 @@ print_line_head (char const *beg, char const *lim, int sep)
       if (align_tabs)
         fputs("\t\b", stdout);
 
-      print_sep(sep);
+      print_sep(' ');
     }
 }
 
