@@ -706,7 +706,10 @@ print_line_head (char const *beg, char const *lim, int sep)
           lastnl = lim;
         }
       if (pending_sep)
-        print_sep(sep);
+		{
+			print_sep(' ');
+			print_sep(sep);
+		}
       print_offset (totalnl, 4, line_num_color);
       pending_sep = 1;
     }
@@ -718,7 +721,10 @@ print_line_head (char const *beg, char const *lim, int sep)
       pos = dossified_pos (pos);
 #endif
       if (pending_sep)
-        print_sep(sep);
+		{
+			print_sep(' ');
+			print_sep(sep);
+		}
       print_offset (pos, 6, byte_num_color);
       pending_sep = 1;
     }
@@ -1273,7 +1279,10 @@ grepfile (char const *file, struct stats *stats)
             {
               print_filename();
               if (filename_mask)
-                print_sep(SEP_CHAR_SELECTED);
+				{
+					print_sep(' ');
+					print_sep(SEP_CHAR_SELECTED);
+				}
               else
                 fputc(0, stdout);
             }
